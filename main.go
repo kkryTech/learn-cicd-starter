@@ -3,15 +3,16 @@ package main
 import (
 	"database/sql"
 	"embed"
+	"io"
+	"log"
+	"net/http"
+	"os"
+
 	"github.com/bootdotdev/learn-cicd-starter/internal/database"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
 	_ "github.com/tursodatabase/libsql-client-go/libsql"
-	"io"
-	"log"
-	"net/http"
-	"os"
 )
 
 type apiConfig struct {
@@ -92,4 +93,9 @@ func main() {
 
 	log.Printf("Serving on port: %s\n", port)
 	log.Fatal(srv.ListenAndServe())
+}
+
+func unused() {
+	// this function does nothing
+	// and is called nowhere
 }
